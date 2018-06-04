@@ -1,3 +1,5 @@
+import java.util.HashMap;;
+
 public class UniqueMorseCode {
   public static void main( String[] args ) {
     String[] words = new String[] { "gin", "zen", "gig", "msg" };
@@ -13,13 +15,18 @@ public class UniqueMorseCode {
   */
   public static int solution( String[] words ) {
     String[] morseCodeTable = new String[]{".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--.."};
-    String[] morseCodeForWords = new String[ words.count() ];
+    HashMap<String , String> map = new HashMap<String , String>();
 
     for ( String word : words ) {
-      char[] chars = word.toCahr
+      char[] chars = word.toCharArray();
+      String str = "";
+      for ( char ch : chars ) {
+        str += morseCodeTable[ ch - 'a'];
+      }
+      map.put(str, str);
     }
     
-    return 0;
+    return map.size();
   }
 
   public int betterSolution( int x ) {
