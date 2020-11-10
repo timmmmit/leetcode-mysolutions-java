@@ -52,4 +52,5 @@ public class Atoi {
 
     public int betterSolution(int x) {
     }
+    
 }
